@@ -12,6 +12,9 @@ Algunos enlaces de interés:
 1. [Página oficial de git](https://github.com/)
 2. [Página oficial de Docker](https://www.docker.com/)
 
+Sitio Web realizado por AntonioGM
+
 > "La vida de un crítico es sencilla en muchos aspectos, arriesgamos poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio a nuestro juicio"
 
 >> PD: Jose Luis este año aprobamos todos
+
