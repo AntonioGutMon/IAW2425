@@ -4,26 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación</title>
+    <style>
+        body{
+            background-color: #272727;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            flex-direction: column;
+        }
+        #avatar{
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+        }
+        h3{
+            margin-top: -10px;
+        }
+        p{
+            margin-top: -5px;
+        }
+        .imagenes{
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .cajas{
+            display: flex;
+            flex-direction: row;
+            width: 400px;
+            height: 70px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-top: 24px;
+            cursor: pointer;
+            transition: transform .2s;
+        }
+        #ig{
+            background: #833ab4;
+            background: linear-gradient(
+                to right,
+                #833ab4,#fd1d1d,#fcb045
+            );
+        }
+        #tktk{
+            background: #ffffff;
+            background: linear-gradient(
+                to right,
+                #010101,#69c9d0,#ee1d52
+            );
+        }
+        #x{
+            background-color: black;
+        }
+        #discord{
+            background-color: rgb(0, 115, 209)
+        }
+        #yt{
+            background-color: rgb(192, 21, 21);
+        }
+        #github{
+            background-color: rgb(82, 82, 82);
+        }
+        .cajas:hover {
+            transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
-<style>
-    body{
-        background-color: black;
-        color: white;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 50px;
-    }
-    #avatar{
-        width: 150px;
-        height: 150px;
-        border-radius: 150px;
-        text-align: center;
-    }
-</style>
 <body>
     <div><img id="avatar" src="https://avatars.githubusercontent.com/u/145703488?s=400&u=75ef033bc553d1ee51feca05abf2c67a5ec540e1&v=4" alt=""></div>
     <h1>AntonioGM</h1>
+    <h3>📍Pedrera, Sevilla</h3>
+    <p>Estudiante de IES Antonio Machado</p>
+    <a href="https://github.com/AntonioGutMon" target="_blank"><div id="github" class="cajas"><img class="imagenes" src="iconos/github.png" alt=""><h2>Github</h2></div></a>
+    <a href="https://www.instagram.com/antoniogutmon/" target="_blank"><div id="ig" class="cajas"><img class="imagenes" src="iconos/instagram.png" alt=""><h2>Instagram</h2></div></a>
+    <a href="https://www.tiktok.com/@antoniogm2005" target="_blank"><div id="tktk" class="cajas"><img class="imagenes" src="iconos/tik-tok.png" alt=""><h2>Tik Tok</h2></div></a>
+    <a href="https://x.com/AntonioGm2005" target="_blank"><div id="x" class="cajas"><img class="imagenes" src="iconos/twitter.jpg" alt=""><h2>Twitter</h2></div></a>
+    <a href="https://www.youtube.com/@antoniogm05" target="_blank"><div id="yt" class="cajas"><img class="imagenes" src="iconos/youtube.png" alt=""><h2>Youtube</h2></div></a>
 </body>
 </html>
