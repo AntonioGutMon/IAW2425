@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <label for="">Nombre:</label><input type="text" id="nombre" required><span id="errorNombre"></span><br>
+    <label for="">Apellidos:</label><input type="text" id="apellidos" required><span id="errorApellidos"></span><br>
+    <label for="">Correo electronico::</label><input type="text" id="correo" required><span id="errorCorreo"></span><br>
+    <label for="">Dirección:</label><input type="text" id="direccion"><br>
+    <label for="">Ciudad:</label><input type="text" id="ciudad"><br>
+    <label for="">Teléfono:</label><input type="text" id="tlf"><br>
+    <label for="">DNI:</label><input type="text" id="dni" required><span id="errorDni"></span><br>
+    <label for="">Contraseña:</label><input type="text" id="contra" required><span id="errorContra"></span><br>
+    <label for="">Repetir contraseña:</label><input type="text" id="contra2" required><span id="errorContra2"></span><br>
+    <button id="validar" onclick="validar()">Validar</button><br>
+    <p id="errores"></p>
+    <script>
+        function validar(){
+
+        }
+
+        function validarNombre(){
+            if(document.getElementById("nombre").value = "")
+                document.getElementById("errorNombre").innerHTML = "Debes rellenar este campo"
+        }
+
+    </script>
+</body>
+</html>
