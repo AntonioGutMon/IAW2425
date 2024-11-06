@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes</title>
+</head>
+<body>
+    <input type="text" id="mensaje">
+    <button onclick="enviar()">Enviar</button>
+    <button onclick="ordenar()">Ordenar</button><br>
+    <ul id="resultado"></ul>
+    <script>
+
+        var mensajes = []
+
+        function enviar(){
+            let mensaje = document.getElementById("mensaje").value
+            mensajes.push(mensaje)
+            crear()
+        }
+
+        function crear(){
+            let mensaje = document.getElementById("mensaje").value
+            let crear = document.createElement("li")
+            crear.append(mensaje)
+            document.getElementById("resultado").append(crear)
+        }
+
+        function ordenar(){
+            mensajes.sort()
+            
+        }
+
+    </script>
+</body>
+</html>
