@@ -15,16 +15,12 @@
     <label for="">DNI:</label><input type="text" id="dni" required><span id="errorDni"></span><br>
     <label for="">Contraseña:</label><input type="text" id="contra" required><span id="errorContra"></span><br>
     <label for="">Repetir contraseña:</label><input type="text" id="contra2" required><span id="errorContra2"></span><br>
-    <button id="validar" onclick="validar()">Validar</button><br>
+    <button id="validar" onclick="validar(document.getElementsByTagName('input'))">Validar</button><br>
     <p id="errores"></p>
     <script>
+        
         function validar(){
 
-        }
-
-        function validarNombre(){
-            if(document.getElementById("nombre").value = "")
-                document.getElementById("errorNombre").innerHTML = "Debes rellenar este campo"
         }
 
     </script>
