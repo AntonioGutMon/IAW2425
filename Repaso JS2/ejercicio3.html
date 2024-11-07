@@ -6,21 +6,85 @@
     <title>Formulario</title>
 </head>
 <body>
-    <label for="">Nombre:</label><input type="text" id="nombre" required><span id="errorNombre"></span><br>
-    <label for="">Apellidos:</label><input type="text" id="apellidos" required><span id="errorApellidos"></span><br>
-    <label for="">Correo electronico::</label><input type="text" id="correo" required><span id="errorCorreo"></span><br>
+    <label for="">Nombre:</label><input class="elementos" type="text" id="nombre" required><span id="campo1"></span><br>
+    <label for="">Apellidos:</label><input class="elementos" type="text" id="apellidos" required><span id="campo2"></span><br>
+    <label for="">Correo electronico:</label><input class="elementos" type="email" id="correo" required><span id="campo3"></span><br>
     <label for="">Dirección:</label><input type="text" id="direccion"><br>
     <label for="">Ciudad:</label><input type="text" id="ciudad"><br>
     <label for="">Teléfono:</label><input type="text" id="tlf"><br>
-    <label for="">DNI:</label><input type="text" id="dni" required><span id="errorDni"></span><br>
-    <label for="">Contraseña:</label><input type="text" id="contra" required><span id="errorContra"></span><br>
-    <label for="">Repetir contraseña:</label><input type="text" id="contra2" required><span id="errorContra2"></span><br>
-    <button id="validar" onclick="validar(document.getElementsByTagName('input'))">Validar</button><br>
+    <label for="">DNI:</label><input class="elementos" type="text" id="dni" required><span id="campo4"></span><br>
+    <label for="">PIN:</label><input class="elementos" type="password" id="PIN" required><span id="campo5"></span><br>
+    <label for="">Repetir PIN:</label><input class="elementos" type="password" id="repetir PIN" required><span id="campo6"></span><br>
+    <button id="validar" onclick="validar(document.getElementsByClassName('elementos'))">Validar</button><br>
     <p id="errores"></p>
     <script>
         
-        function validar(){
+        function validar(elementos){
+            let estanCorrectos = true
+            for(i=0;i<elementos.length;i++){
+                document.getElementById("campo" + (i + 1).toString()).innerHTML = ""
+                if (elementos[i].value == ""){
+                    document.getElementById("campo" + (i + 1).toString()).innerHTML = " El campo " + elementos[i].id + " esta vacío"
+                    estanCorrectos = false
+                }
+            }
+            
+            if (!validarCorreo()){
+                if (document.getElementById("correo").value == "")
+                    document.getElementById("campo3").innerHTML = "El campo correo esta vacío"
+                else
+                    document.getElementById("campo3").innerHTML = "Correo no valido"
+                estanCorrectos = false
+            } 
 
+            if (!validarDni()){
+                if (document.getElementById("dni").value == "")
+                    document.getElementById("campo4").innerHTML = "El campo dni esta vacío"
+                else
+                    estanCorrectos = false
+            } 
+
+        }
+
+        function validarCorreo(){
+            let valido
+            let expresionEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
+            let correo = document.getElementById("correo").value
+            if(expresionEmail.test(correo))
+                valido = true
+            else
+                valido = false
+            return valido
+        }
+
+        function validarDni(){
+            let valido
+            let dni = document.getElementById("dni").value
+            let numDni = dni.substring(0,8)
+            let letraDni = dni.substring(8,9)
+            let dniTotal = numDni + letraDni
+            let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T']
+            let letraCorrecta = letras[numDni % 23]
+            let formato = /\d{8}[a-z A-Z]/
+            if (!formato.test(dniTotal)){
+                document.getElementById("campo4").innerHTML = "El formato del dni no es valido"
+                return valido = false
+            }
+            else{
+                if(letraDni.toUpperCase() != letraCorrecta){
+                    document.getElementById("campo4").innerHTML = "La letra introducida no es la correcta"
+                    return valido = false
+                }
+                else{
+                    document.getElementById("campo4").innerHTML = ""
+                    return valido = true
+                }  
+            }
+            return valido
+        }
+
+        function validarPin(){
+            
         }
 
     </script>
