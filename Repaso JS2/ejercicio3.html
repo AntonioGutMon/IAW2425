@@ -14,7 +14,7 @@
     <label for="">Teléfono:</label><input type="text" id="tlf"><br>
     <label for="">DNI:</label><input class="elementos" type="text" id="dni" required><span id="campo4"></span><br>
     <label for="">PIN:</label><input class="elementos" type="password" id="PIN" required><span id="campo5"></span><br>
-    <label for="">Repetir PIN:</label><input class="elementos" type="password" id="repetir PIN" required><span id="campo6"></span><br>
+    <label for="">Repetir PIN:</label><input class="elementos" type="password" id="repetirPIN" required><span id="campo6"></span><br>
     <button id="validar" onclick="validar(document.getElementsByClassName('elementos'))">Validar</button><br>
     <p id="errores"></p>
     <script>
@@ -44,6 +44,16 @@
                     estanCorrectos = false
             } 
 
+            if (!validarPin()){
+                if (document.getElementById("PIN").value == "")
+                    document.getElementById("campo5").innerHTML = "El campo PIN esta vacío"
+                else
+                    estanCorrectos = false
+                    if (document.getElementById("repetirPIN").value == "")
+                    document.getElementById("campo6").innerHTML = "El campo Repetir PIN esta vacío"
+                else
+                    estanCorrectos = false
+            }
         }
 
         function validarCorreo(){
@@ -84,7 +94,19 @@
         }
 
         function validarPin(){
-            
+            let expresion = /^.{8,}$/
+            let pin1 = document.getElementById("PIN").value
+            let pin2 = document.getElementById("repetirPIN").value
+            if (!expresion.test(pin1)){
+                document.getElementById("campo5").innerHTML = "La contraseña debe de tener al menos 8 caracteres"
+                document.getElementById("campo6").innerHTML = "La contraseña debe de tener al menos 8 caracteres"
+            }
+            else{
+                if (pin1 != pin2){
+                    document.getElementById("campo5").innerHTML = "Las contraseñas no coinciden"
+                    document.getElementById("campo6").innerHTML = "Las contraseñas no coinciden"
+                }
+            }
         }
 
     </script>
