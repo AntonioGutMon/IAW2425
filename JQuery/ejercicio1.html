@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 de jQuery</title>
+    <!-- <script src="jquery.js"></script> --> <!--Opcion local-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!--CDN--> 
+</head>
+<body>
+    <h1>Ejemplo de jQuery</h1>
+    <p>ASDHASKJDHASDKJHASDKJHASDLKJASDHASLJKDHASKLJDHASDJKLHASKLH</p>
+    <p class="par">AJDLAKSJDKLSADJALDKJASDLKJASDLKASJDLASKD</p>
+
+    <button id="ocultar">Click para ocultar parrafo</button>
+    <button id="mostrar">Click para mostrar parrafo</button>
+    <button id="alternar">Click para alternar</button>
+    <script>
+        $(document).ready(function () {
+            // Cuando el sitio web se haya cargado por completo
+            $("#ocultar").click(function(){
+                $(".par").hide();
+            });
+            $("#mostrar").click(function(){
+                $(".par").show();
+            });
+            $("#alternar").click(function(){
+                $(".par").toggle();
+            });
+        });
+    </script>
+</body>
+</html>
