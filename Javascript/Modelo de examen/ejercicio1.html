@@ -15,8 +15,9 @@
     <label for="">DNI:</label><input class="elementos" type="text" id="dni" required><span id="campo5"></span><br>
     <label for="">Contraseña:</label><input class="elementos" type="password" id="PIN" required><span id="campo6"></span><br>
     <label for="">Repetir contraseña:</label><input class="elementos" type="password" id="repetirPIN" required><span id="campo7"></span><br>
+    <label for="">Acepto el tratamiento de datos personales:</label><input class="elementos" type="checkbox" id="Acepto el tratamiento de datos personales" required><span id="campo8"></span><br>
     <button id="validar" onclick="validar(document.getElementsByClassName('elementos'))">Validar</button><br>
-    <p id="errores"></p>
+    <p id="usuario"></p>
     <script>
         
         function validar(elementos){
@@ -24,14 +25,14 @@
             for(i=0;i<elementos.length;i++){
                 document.getElementById("campo" + (i + 1).toString()).innerHTML = ""
                 if (elementos[i].value == "" || (i==7 && !elementos[i].checked)){
-                    document.getElementById("campo" + (i + 1).toString()).innerHTML = " El campo " + elementos[i].id + " esta vacío"
+                    document.getElementById("campo" + (i + 1).toString()).innerHTML = ' El campo  "' + elementos[i].id + '" esta vacío'
                     estanCorrectos = false
                 }
             }
             
             if (!validarCorreo()){
                 if (document.getElementById("correo").value == "")
-                    document.getElementById("campo4").innerHTML = "El campo correo esta vacío"
+                    document.getElementById("campo4").innerHTML = 'El campo "correo" esta vacío'
                 else
                     document.getElementById("campo4").innerHTML = "Correo no valido"
                 estanCorrectos = false
@@ -39,21 +40,34 @@
 
             if (!validarDni()){
                 if (document.getElementById("dni").value == "")
-                    document.getElementById("campo5").innerHTML = "El campo dni esta vacío"
+                    document.getElementById("campo5").innerHTML = 'El campo "dni" esta vacío'
                 else
                     estanCorrectos = false
             } 
 
             if (!validarPin()){
-                if (document.getElementById("PIN").value == "")
-                    document.getElementById("campo6").innerHTML = "El campo PIN esta vacío"
-                else
+                if (document.getElementById("PIN").value == ""){
+                    document.getElementById("campo6").innerHTML = 'El campo "PIN" esta vacío'
                     estanCorrectos = false
-                    if (document.getElementById("repetirPIN").value == "")
-                    document.getElementById("campo7").innerHTML = "El campo Repetir PIN esta vacío"
-                else
+                }
+
+                if (document.getElementById("repetirPIN").value == ""){
+                    document.getElementById("campo7").innerHTML = 'El campo "repetir PIN" esta vacío'
                     estanCorrectos = false
+                }
+                    
             }
+
+            if (estanCorrectos == true){
+                let nombre = document.getElementById("nombre").value.substring(0,1)
+                let ape1 = document.getElementById("apellido1").value.substring(0,3)
+                let ape2 = document.getElementById("apellido2").value.substring(0,3)
+                let dni = document.getElementById("dni").value.substring(6,8)
+                let usuario = nombre + ape1 + ape2 + dni
+                document.getElementById("usuario").innerHTML = "Tu nombre de usuario es: " + usuario
+            }
+
+           
         }
 
         function validarCorreo(){
@@ -94,6 +108,7 @@
         }
 
         function validarPin(){
+            let valido
             let expresion = /^.{8,}$/
             let pin1 = document.getElementById("PIN").value
             let pin2 = document.getElementById("repetirPIN").value
@@ -107,6 +122,7 @@
                     document.getElementById("campo7").innerHTML = "Las contraseñas no coinciden"
                 }
             }
+            return valido
         }
 
     </script>
