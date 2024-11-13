@@ -66,10 +66,18 @@
             let numero = document.getElementById("numero").value
             let fechaE = document.getElementById("datepicker").value
             let fechaS = document.getElementById("datepicker2").value
-            let partes = fechaStr.split("/")
+            let partes = fechaE.split("/")
             let dia = partes[0]
             let mes = partes[1]
             let ano = partes[2]
+            let total1 = ano + "/" + mes + "/" + dia
+            let partes2 = fechaS.split("/")
+            let dia2 = partes2[0]
+            let mes2 = partes2[1]
+            let ano2 = partes2[2]
+            let total2 = ano2 + "/" + mes2 + "/" + dia2
+            let fecha1 = new Date(total1)
+            let fecha2 = new Date(total2)
             if (numero == ""){
                 document.getElementById("eleccion").innerHTML = "Introduce un numero de habitación"
             }
@@ -85,11 +93,11 @@
             else if (fechaS == ""){
                 document.getElementById("eleccion").innerHTML = "Introduce una fecha de salida"
             }
-            else if (Date.parse(fechaE) > Date.parse(fechaS)){
+            else if (fecha1 > fecha2){
                 document.getElementById("eleccion").innerHTML = "La fecha de salida no puede ser superior a la de entrada"
             }
             else{
-                let mensaje = "Has elegido una habitación " + tipo + ", el numero de tu habitación es " + numero + " y la fecha de entrada es " + fechaE + "y la fecha de salida es " + fechaS
+                let mensaje = "Has elegido una habitación " + tipo + ", el numero de tu habitación es " + numero + " y la fecha de entrada es " + fechaE + " y la fecha de salida es " + fechaS
                 document.getElementById("eleccion").innerHTML = mensaje
             }
         }
