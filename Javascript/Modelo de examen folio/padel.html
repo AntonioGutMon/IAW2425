@@ -123,8 +123,26 @@
         $(document).ready(function () {
             $("#reserva").click(function(){
                 event.preventDefault()
-                $("#hora").val()
-                console.log
+                let fecha = $("#datepicker").val()
+                let pista = $("#pista").val()
+                let hora = $("#hora").val()
+                let luz = $("#luz").is(":checked");
+
+                let precio = 0
+                if (hora <= 4){
+                    precio += 10
+                }
+                else if (hora <= 6){
+                    precio += 12
+                }
+                else if (hora <= 9){
+                    precio += 16
+                }
+                if (luz == true){
+                    precio +=4
+                }
+                $("#totalPrecio").html() = precio
+
             })
         });
     </script>
