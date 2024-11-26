@@ -7,17 +7,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <button id="post">Ver posts</button>
+    <button id="buscar">Ver posts</button>
     <p id="resultados"></p>
     <script>
         $(document).ready(function () {
-            $("#post").click(function(){
-                let url = "https://jsonplaceholder.typicode.com/photos"
+            $("#buscar").click(function(){
+                let url = "https://dog.ceo/api/breeds/image/random"
                 $.get(url).done(function(datos){
                     $("#resultados").empty()
-                    for(var i=0; i < datos.length; i++){
-                        $("#resultados").append('<img src="'+ datos[i].url +'">')
-                    }
+                    $("#resultados").append('<img src="'+ datos.message +'">')
                 }).fail(function(){
                     $("#resultados").text("Error al acceder al enlace")
                 })

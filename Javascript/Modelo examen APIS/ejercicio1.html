@@ -19,7 +19,7 @@
                         $("#resultados").append('<p>'+ datos[i].title + ': ' + datos[i].body +'</p>')
                     }
                 }).fail(function(){
-                    $("#resultados").text("No se puede acceder a los productos")
+                    $("#resultados").text("Error al acceder al enlace")
                 })
             })
         });

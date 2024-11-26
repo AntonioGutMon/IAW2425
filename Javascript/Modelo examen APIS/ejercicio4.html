@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" id="pokemon">
+    <button id="buscar">Buscar pokemon</button>
+    <p id="resultados"></p>
+    <script>
+        $(document).ready(function () {
+            $("#buscar").click(function(){
+                let pokemon = $("#pokemon").val()
+                let url = "https://pokeapi.co/api/v2/pokemon/" + pokemon
+                $.get(url).done(function(datos){
+                    $("#resultados").empty()
+                    $("#resultados").append('<p>Nombre: ' + datos.name + '</p>')
+                    $("#resultados").append('<p>Numero de pokedex: ' + datos.id + '</p>')
+                    $("#resultados").append('<p>HP: ' + datos.stats[0].base_stat + '</p>')
+                    $("#resultados").append('<p>Ataque: ' + datos.stats[1].base_stat + '</p>')
+                    $("#resultados").append('<p>Defensa: ' + datos.stats[2].base_stat + '</p>')
+                    $("#resultados").append('<p>Ataque especial: ' + datos.stats[3].base_stat + '</p>')
+                    $("#resultados").append('<p>Defensa especial: ' + datos.stats[4].base_stat + '</p>')
+                    $("#resultados").append('<p>Velocidad : ' + datos.stats[5].base_stat + '</p>')
+                    $("#resultados").append('<img src="'+ datos.sprites.front_default +'">')
+                }).fail(function(){
+                    $("#resultados").text("Error al acceder al enlace")
+                })
+            })
+        });
+    </script>
+</body>
+</html>

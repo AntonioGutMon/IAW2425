@@ -7,17 +7,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <button id="post">Ver posts</button>
+    <input type="text" id="pais">
+    <button id="buscar">Buscar pais</button>
     <p id="resultados"></p>
     <script>
         $(document).ready(function () {
-            $("#post").click(function(){
-                let url = "https://jsonplaceholder.typicode.com/photos"
+            $("#buscar").click(function(){
+                let pais = $("#pais").val()
+                let url = "https://restcountries.com/v3.1/name/" + pais
                 $.get(url).done(function(datos){
                     $("#resultados").empty()
-                    for(var i=0; i < datos.length; i++){
-                        $("#resultados").append('<img src="'+ datos[i].url +'">')
-                    }
+                    $("#resultados").append('<p>Nombre: ' + datos[0].translations.spa.common + '</p>')
+                    $("#resultados").append('<p>Capital: ' + datos[0].capital[0] + '</p>')
+                    $("#resultados").append('<p>Población: ' + datos[0].population + '</p>')
+                    $("#resultados").append('<img src="'+ datos[0].flags.png +'">')
                 }).fail(function(){
                     $("#resultados").text("Error al acceder al enlace")
                 })
