@@ -13,7 +13,7 @@
     <script>
         $(document).ready(function () {
             $("#buscar").click(function(){
-                let pokemon = $("#pokemon").val()
+                let pokemon = $("#pokemon").val().toLowerCase()
                 let url = "https://pokeapi.co/api/v2/pokemon/" + pokemon
                 $.get(url).done(function(datos){
                     $("#resultados").empty()
