@@ -9,6 +9,6 @@
     <?php
         $numero = rand(128512,128586);
     ?>
-    <p>I will display &#<?= $numero ?></p>
+    <p>&#<?= $numero ?></p>
 </body>
 </html>

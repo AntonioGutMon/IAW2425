@@ -24,11 +24,11 @@
 <body>
 <?php 
     $array = array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p");
-    $random = rand(0,15);
-    $tripulante = $array[$random];
+    $random = rand(0,count($array));
+    $imagen = $array[$random];
 ?>
     <h1>Bleach girls:</h1><div>
-    <img src="<?= $tripulante; ?>.jpeg" alt=""></div>
+    <img src="<?= $imagen; ?>.jpeg" alt=""></div>
 
 </body>
 </html>
