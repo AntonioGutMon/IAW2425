@@ -9,4 +9,4 @@
     <h1>Encabezado</h1>
     <?php echo "<p>chimpin</p>"; ?>
 </body>
-</html>
+</html> 
