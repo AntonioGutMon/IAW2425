@@ -11,8 +11,8 @@
             align-items: center;
         }
         img {
-            width: 240px;
-            height: 240px;
+            width: auto;
+            height: auto;
         }
         h1{
             display: flex;
