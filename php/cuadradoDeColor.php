@@ -29,7 +29,7 @@
     </style>
 </head>
 <body>
-    <div>Tengo un color aleatorio, prueba con F5</div>
+    <div></div>
 
 </body>
 </html>
