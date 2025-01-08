@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energia Cinetica</title>
+</head>
+<body>
+    <label for="">Masa: </label><input id="masa" type="text"><br>
+    <label for="">Velocidad: </label><input id="velocidad" type="text"><br>
+    <button onclick="enviar()">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        function enviar(){
+            let masa = document.getElementById("masa").value
+            let velocidad = document.getElementById("velocidad").value
+            if (masa == "" && velocidad == ""){
+                document.getElementById("resultado").innerHTML = "El campo masa o velocidad esta vacio"
+            }
+            else if (isNaN(masa) && isNaN(velocidad)){
+                document.getElementById("resultado").innerHTML = "Los campos han de ser numeros"
+            }
+            else{
+                let ec = 1/2 * masa * (velocidad * velocidad)
+                if (ec < 10){
+                    document.getElementById("resultado").innerHTML = "La energia cinetica es baja: " + ec + "J"
+                }
+                else if (ec < 100){
+                    document.getElementById("resultado").innerHTML = "La energia cinetica es moderada: " + ec + "J"
+                }
+                else{
+                    document.getElementById("resultado").innerHTML = "La energia cinetica es alta: " + ec + "J"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

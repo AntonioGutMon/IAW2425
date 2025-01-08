@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        span{
+            color: red;
+        }
+        i{
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <label for="">Asunto:</label><input class="elementos" type="number" id="asunto" required><span id="campo1"></span><br>
+    <label for="">DNI:</label><input class="elementos" type="text" id="dni" required><span id="campo2"></span><br>
+    <label for="">Nombre:</label><input class="elementos" type="text" id="nombre" required><span id="campo3"></span><br>
+    <label for="">Primer apellido:</label><input class="elementos" type="text" id="apellido1" required><span id="campo4"></span><br>
+    <label for="">Segundo apellido:</label><input class="elementos" type="text" id="apellido2" required><span id="campo5"></span><br>
+    <label for="">Fecha de nacimiento (dd/mm/yyyy):</label><input class="elementos" type="text" id="fecha_de_nacimiento" required><span id="campo6"></span><br>
+    <label for="">Telefono de contacto:</label><input class="elementos" type="text" id="telefono" required><span id="campo7"></span><br>
+    <label for="">Correo electronico (para respuesta):</label><input class="elementos" type="email" id="correo"><span id="campo8"></span><br>
+    <label for="">Domicilio:</label><input class="elementos" type="text" id="domicilio" required><span id="campo9"></span><br>
+    <label for="">Código postal:</label><input class="elementos" type="text" id="codigo_postal" required><span id="campo10"></span><br>
+    <label for="">Municipio:</label><select class="elementos" id="municipio" name="clave" required>
+        <option value="0" selected></option>
+        <option value="41001">Aguadulce</option>
+        <option value="41002">Alanís</option>
+        <option value="41003">Albaida del Aljarafe</option>
+        <option value="41004">Alcalá de Guadaíra</option>
+        <option value="41005">Alcalá del Río</option>
+        <option value="41006">Alcolea del Río</option>
+        <option value="41007">Algaba (La)</option>
+        <option value="41008">Algámitas</option>
+        <option value="41009">Almadén de la Plata</option>
+        <option value="41010">Almensilla</option>
+        <option value="41011">Arahal</option>
+        <option value="41012">Aznalcázar</option>
+        <option value="41013">Aznalcóllar</option>
+        <option value="41014">Badolatosa</option>
+        <option value="41015">Benacazón</option>
+        <option value="41016">Bollullos de la Mitación</option>
+        <option value="41017">Bormujos</option>
+        <option value="41018">Brenes</option>
+        <option value="41019">Burguillos</option>
+        <option value="41020">Cabezas de San Juan (Las)</option>
+        <option value="41021">Camas</option>
+        <option value="41022">Campana (La)</option>
+        <option value="41023">Cantillana</option>
+        <option value="41901">Cañada Rosal</option>
+        <option value="41024">Carmona</option>
+        <option value="41025">Carrión de los Céspedes</option>
+        <option value="41026">Casariche</option>
+        <option value="41027">Castilblanco de los Arroyos</option>
+        <option value="41028">Castilleja de Guzmán</option>
+        <option value="41029">Castilleja de la Cuesta</option>
+        <option value="41030">Castilleja del Campo</option>
+        <option value="41031">Castillo de las Guardas (El)</option>
+        <option value="41032">Cazalla de la Sierra</option>
+        <option value="41033">Constantina</option>
+        <option value="41034">Coria del Río</option>
+        <option value="41035">Coripe</option>
+        <option value="41036">Coronil (El)</option>
+        <option value="41037">Corrales (Los)</option>
+        <option value="41903">Cuervo de Sevilla (El)</option>
+        <option value="41038">Dos Hermanas</option>
+        <option value="41039">Ecija</option>
+        <option value="41040">Espartinas</option>
+        <option value="41041">Estepa</option>
+        <option value="41042">Fuentes de Andalucía</option>
+        <option value="41043">Garrobo (El)</option>
+        <option value="41044">Gelves</option>
+        <option value="41045">Gerena</option>
+        <option value="41046">Gilena</option>
+        <option value="41047">Gines</option>
+        <option value="41048">Guadalcanal</option>
+        <option value="41049">Guillena</option>
+        <option value="41050">Herrera</option>
+        <option value="41051">Huévar del Aljarafe</option>
+        <option value="41902">Isla Mayor</option>
+        <option value="41052">Lantejuela</option>
+        <option value="41053">Lebrija</option>
+        <option value="41054">Lora de Estepa</option>
+        <option value="41055">Lora del Río</option>
+        <option value="41056">Luisiana (La)</option>
+        <option value="41057">Madroño (El)</option>
+        <option value="41058">Mairena del Alcor</option>
+        <option value="41059">Mairena del Aljarafe</option>
+        <option value="41060">Marchena</option>
+        <option value="41061">Marinaleda</option>
+        <option value="41062">Martín de la Jara</option>
+        <option value="41063">Molares (Los)</option>
+        <option value="41064">Montellano</option>
+        <option value="41065">Morón de la Frontera</option>
+        <option value="41066">Navas de la Concepción (Las)</option>
+        <option value="41067">Olivares</option>
+        <option value="41068">Osuna</option>
+        <option value="41069">Palacios y Villafranca (Los)</option>
+        <option value="41904">Palmar de Troya (El)</option>
+        <option value="41070">Palomares del Río</option>
+        <option value="41071">Paradas</option>
+        <option value="41072">Pedrera</option>
+        <option value="41073">Pedroso (El)</option>
+        <option value="41074">Peñaflor</option>
+        <option value="41075">Pilas</option>
+        <option value="41076">Pruna</option>
+        <option value="41077">Puebla de Cazalla (La)</option>
+        <option value="41078">Puebla de los Infantes (La)</option>
+        <option value="41079">Puebla del Río (La)</option>
+        <option value="41080">Real de la Jara (El)</option>
+        <option value="41081">Rinconada (La)</option>
+        <option value="41082">Roda de Andalucía (La)</option>
+        <option value="41083">Ronquillo (El)</option>
+        <option value="41084">Rubio (El)</option>
+        <option value="41085">Salteras</option>
+        <option value="41086">San Juan de Aznalfarache</option>
+        <option value="41088">San Nicolás del Puerto</option>
+        <option value="41087">Sanlúcar la Mayor</option>
+        <option value="41089">Santiponce</option>
+        <option value="41090">Saucejo (El)</option>
+        <option value="41091">Sevilla</option>
+        <option value="41092">Tocina</option>
+        <option value="41093">Tomares</option>
+        <option value="41094">Umbrete</option>
+        <option value="41095">Utrera</option>
+        <option value="41096">Valencina de la Concepción</option>
+        <option value="41097">Villamanrique de la Condesa</option>
+        <option value="41100">Villanueva de San Juan</option>
+        <option value="41098">Villanueva del Ariscal</option>
+        <option value="41099">Villanueva del Río y Minas</option>
+        <option value="41101">Villaverde del Río</option>
+        <option value="41102">Viso del Alcor (El)</option>
+    </select><span id="campo11"></span><br>
+    <label for="">Oficina:</label><select class="elementos" type="text" id="oficina" required>
+        <option value="0" selected></option>
+        <option value="1">Oficina 1</option>
+        <option value="2">Oficina 2</option>
+        <option value="3">Oficina 3</option>
+        <option value="4">Oficina 4</option>
+    </select><span id="campo12"></span><br>
+    <label for="">Fichero Anexo I (maximo 2MB):</label><input class="elementos" type="file" id="anexo1" required><span id="campo13"></span><br>
+    <label for="">Fichero Anexo II (maximo 2MB):</label><input class="elementos" type="file" id="anexo2" required><span id="campo14"></span><br>
+    <label for="">Información requerida:</label><input class="elementos" type="text" id="informacion" required><span id="campo15"></span><br>
+    <label for="">He leido y acepto la <i>política de datos y normas de uso</i>:</label><input class="elementos" type="checkbox" id="politica-normas" required><span id="campo16"></span><br>
+    <button id="validar" onclick="validar(document.getElementsByClassName('elementos'))">Validar</button><br>
+    <p id="usuario"></p>
+    <script>
+        
+        function validar(elementos){
+            for(i=0;i<elementos.length;i++){
+                document.getElementById("campo" + (i + 1).toString()).innerHTML = ""
+                if (elementos[i].value == "" || (i==15 && !elementos[i].checked)){
+                    document.getElementById("campo" + (i + 1).toString()).innerHTML = ' El campo  "' + elementos[i].id + '" esta vacío'
+                }
+            }
+
+            if (document.getElementById("municipio").value == 0){
+                document.getElementById("campo11").innerHTML = ' El campo "municipio" esta vacío'
+            }
+
+            if (document.getElementById("oficina").value == 0){
+                document.getElementById("campo12").innerHTML = ' El campo "oficina" esta vacío'
+            }
+            
+            if (!validarCorreo()){
+                if (document.getElementById("correo").value == "")
+                    document.getElementById("campo8").innerHTML = ''
+                else
+                    document.getElementById("campo8").innerHTML = "Correo no valido"
+            } 
+
+            if (!validarDni()){
+                if (document.getElementById("dni").value == "")
+                    document.getElementById("campo2").innerHTML = 'El campo "dni" esta vacío'
+            } 
+
+            if (document.getElementById("anexo1").files[0].size > 20000){
+                document.getElementById("campo13").innerHTML = ' El aricho es superior a 2MB'
+            }
+
+            if (document.getElementById("anexo2").files[0].size > 20000){
+                document.getElementById("campo14").innerHTML = ' El aricho es superior a 2MB'
+            }
+        }
+
+        function validarCorreo(){
+            let valido
+            let expresionEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
+            let correo = document.getElementById("correo").value
+            if(expresionEmail.test(correo))
+                valido = true
+            else
+                valido = false
+            return valido        
+        }
+
+        function validarDni(){
+            let valido
+            let dni = document.getElementById("dni").value
+            let numDni = dni.substring(0,8)
+            let letraDni = dni.substring(8,9)
+            let dniTotal = numDni + letraDni
+            let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T']
+            let letraCorrecta = letras[numDni % 23]
+            let formato = /\d{8}[a-z A-Z]/
+            if (!formato.test(dniTotal)){
+                document.getElementById("campo2").innerHTML = "El formato del dni no es valido"
+                return valido = false
+            }
+            else{
+                if(letraDni.toUpperCase() != letraCorrecta){
+                    document.getElementById("campo2").innerHTML = "La letra introducida no es la correcta"
+                    return valido = false
+                }
+                else{
+                    document.getElementById("campo2").innerHTML = ""
+                    return valido = true
+                }  
+            }
+            return valido
+        }
+
+    </script>
+</body>
+</html>

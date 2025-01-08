@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" id="texto">
+    <button id="enviar">Buscar gifs</button>
+    <p id="resultados"></p>
+    <script>
+        $(document).ready(function () {
+            $("#enviar").click(function(){
+                let texto = document.getElementById("texto").value
+                let key = "OK9x2IismHmL6AqZDI17VvCangfxJltL"
+                let url = "https://api.giphy.com/v1/gifs/search?api_key=" + key + "&q=" + texto
+                $.get(url).done(function(datos){
+                    $("#resultados").empty()
+                    for(var i=0; i < datos.data.length; i++){
+                        $("#resultados").append('<img src="'+ datos.data[i].embed_url +'">')
+                    }
+                }).fail(function(){
+                    $("#resultados").text("Error al acceder al enlace")
+                })
+            })
+        });
+    </script>
+</body>
+</html>
