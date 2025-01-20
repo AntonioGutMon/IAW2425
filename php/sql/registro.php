@@ -2,7 +2,7 @@
 // Conexión a la base de datos
 $servername = "sql308.thsite.top";
 $username = "thsi_38097483";
-$password = "";
+$password = "!ucfTmzQ";
 $database = "thsi_38097483_php";
 $enlace = mysqli_connect($servername, $username, $password, $database);
 
@@ -29,11 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_num_rows($resultado) > 0) {
         echo "<p>Error: El usuario ya está registrado.</p>";
-    }
-    else{
+    } else {
         // Cifrar la contraseña
-        $password_encrypted = $password; // Sin cifrar (GRAN ERROR)
-        // $password_encrypted = crypt($password, '$6$rounds=5000$' . uniqid(mt_rand(), true) . '$');
+        $password_encrypted = password_hash($password, PASSWORD_DEFAULT);
 
         // Insertar datos en la base de datos
         $query = "INSERT INTO usuarios (nombre, apellidos, email, password) VALUES ('$nombre', '$apellidos', '$email', '$password_encrypted')";
